@@ -24,21 +24,24 @@ jobs:
           wget https://github.com/katalon-studio/katalon-studio/releases/download/v10.2.4/Katalon_Studio_Enterprise_Linux_64-10.2.4.tar.gz
           tar -xzf Katalon_Studio_Enterprise_Linux_64-10.2.4.tar.gz
 
-      - name: List Files (Debug)
+      - name: Debug - List Extracted Files
         run: |
           ls -l
-          ls -l Test\ Cases
-          ls -l Test\ Suites
+          ls -l Katalon_Studio_Enterprise_Linux_64-10.2.4 || true
+          find . -type f
 
       - name: Run Katalon Test Suite
+        env:
+          KATALON_API_KEY: ${{ secrets.KATALON_API_KEY }}   # <-- Pastikan sudah buat secret dengan nama ini
         run: |
           ./Katalon_Studio_Enterprise_Linux_64-10.2.4/katalonc \
             -noSplash \
             -runMode=console \
-            -projectPath="$(pwd)/SauceDemo-WebUI.prj" \
+            -projectPath="$(pwd)/SauceDemoKatalonStudio/SauceDemoKatalonStudio.prj" \
             -testSuitePath="Test Suites/SmokeSuite" \
             -executionProfile="default" \
-            -browserType="Chrome"
+            -browserType="Chrome" \
+            -apiKey="$KATALON_API_KEY"
 
       - name: Upload Test Reports
         if: always()
