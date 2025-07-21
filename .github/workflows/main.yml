@@ -24,12 +24,18 @@ jobs:
           wget https://github.com/katalon-studio/katalon-studio/releases/download/v9.1.0/Katalon_Studio_Linux_9.1.0.tar.gz
           tar -xzf Katalon_Studio_Linux_9.1.0.tar.gz
 
+      - name: List Files (Debug)
+        run: |
+          ls -l
+          ls -l Test\ Cases
+          ls -l Test\ Suites
+
       - name: Run Katalon Test Suite
         run: |
           ./Katalon_Studio_Linux_9.1.0/katalonc \
             -noSplash \
             -runMode=console \
-            -projectPath="$(pwd)" \
+            -projectPath="$(pwd)/SauceDemo-WebUI.prj" \
             -testSuitePath="Test Suites/SmokeSuite" \
             -executionProfile="default" \
             -browserType="Chrome"
@@ -40,4 +46,3 @@ jobs:
         with:
           name: katalon-reports
           path: Reports/
-
