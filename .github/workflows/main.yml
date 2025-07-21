@@ -21,8 +21,8 @@ jobs:
 
       - name: Download Katalon Studio
         run: |
-          wget https://github.com/katalon-studio/katalon-studio/releases/download/v9.1.0/Katalon_Studio_Linux_9.1.0.tar.gz
-          tar -xzf Katalon_Studio_Linux_9.1.0.tar.gz
+          wget https://github.com/katalon-studio/katalon-studio/releases/download/v10.2.4/Katalon_Studio_Enterprise_Linux_64-10.2.4.tar.gz
+          tar -xzf Katalon_Studio_Enterprise_Linux_64-10.2.4.tar.gz
 
       - name: List Files (Debug)
         run: |
@@ -32,7 +32,7 @@ jobs:
 
       - name: Run Katalon Test Suite
         run: |
-          ./Katalon_Studio_Linux_9.1.0/katalonc \
+          ./Katalon_Studio_Enterprise_Linux_64-10.2.4/katalonc \
             -noSplash \
             -runMode=console \
             -projectPath="$(pwd)/SauceDemo-WebUI.prj" \
