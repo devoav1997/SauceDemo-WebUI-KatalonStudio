@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC_RemoveFromCart_Negative_CartEmpty</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>5a7e4a42-f105-4935-9986-f45cad2df0ef</testCaseGuid>
+</TestCaseEntity>

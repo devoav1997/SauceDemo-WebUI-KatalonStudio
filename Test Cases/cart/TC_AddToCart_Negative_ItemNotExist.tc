@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC_AddToCart_Negative_ItemNotExist</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>f13b680a-bdd2-48df-a078-587e9f091d8b</testCaseGuid>
+</TestCaseEntity>
